@@ -1,29 +1,37 @@
 <!doctype html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="{{ '/static/style.css'|url }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <title>{% block title %}Welcome{% endblock %} — Blog</title>
 <body>
-  <header>
-    <h1>Blog</h1>
-    <nav>
-      <ul class="nav navbar-nav">
-        <li{% if this._path == '/' %} class="active"{% endif
-          %}><a href="{{ '/'|url }}">Welcome</a></li>
+  <nav class="navbar navbar-expand-lg navbar-toggleable-sm fixed-top navbar-light bg-faded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if this._path == '/' %} active {% endif%}">
+          <a class="nav-link" href="{{ '/'|url }}">Welcome <span class="sr-only">(current)</span></a>
+        </li>
         {% for href, title in [
           ['/blog', 'Blog'],
           ['/projects', 'Projects'],
           ['/about', 'About']
         ] %}
-          <li{% if this.is_child_of(href) %} class="active"{% endif
-            %}><a href="{{ href|url }}">{{ title }}</a></li>
+          <li class="nav-item {% if this.is_child_of(href) %} active {% endif%}">
+            <a class="nav-link" href="{{ href|url }}">{{ title }}</a>
+          </li>
         {% endfor %}
       </ul>
-    </nav>
-  </header>
-  <div class="page">
+    </div>
+  </nav>
+  <div class="container">
     {% block body %}{% endblock %}
   </div>
-  <footer>
+  <footer class="text-white d-flex justify-content-center align-items-center">
     &copy; Copyright 2017 by joeirimpan.
   </footer>
 </body>
