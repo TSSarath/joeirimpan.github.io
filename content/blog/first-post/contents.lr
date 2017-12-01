@@ -1,4 +1,4 @@
-title: Hello Website
+title: Getting started with pytest
 ---
 pub_date: 2017-11-29
 ---
@@ -6,4 +6,18 @@ author: joeirimpan
 ---
 body:
 
-This is an example blog post.  Not much here but that's not the point :)
+"Untested code = Broken code"
+ 
+Many a projects have very less or infact no tests just because the person is too lazy to get started with the tests. Its all easy to write tests for a project which already has tests. Python has inbuilt unittest module which is inherently non-pythonic. Arrives pytest. This tool has all the things you need.
+
+Lets says we need to test an api
+
+<script src="https://gist.github.com/joeirimpan/23c0d4645dbd5b985efc32199c970489.js"></script>
+
+Oh boy, you hit the server all the time when you run tests? Meh! Use vcrpy or responses library to mock the requests / responses. Responses library only supports requests library whereas vcrpy lets you record any the network requests.
+
+Here is the sample code
+
+<script src="https://gist.github.com/joeirimpan/8723b83da51bedbbaa1244bea293b25a.js"></script> 
+---
+_slug: getting-started-with-pytest
