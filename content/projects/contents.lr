@@ -2,8 +2,10 @@ title: Projects
 ---
 body:
 
-This is a list of the projects:
+Some of the active projects i m working on:
 
-* Project 1
-* Project 2
-* Project 3
+* GitKLOC, which gives you information on the number of lines of code you contributed to an organization
+
+* PyParallel, a parallel downloader written in Python using requests
+
+* ZammadPy, API wrapper for zammad helpdesk
