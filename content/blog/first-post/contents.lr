@@ -8,7 +8,7 @@ body:
 
 "Untested code = Broken code"
  
-Many a projects have very less or infact no tests just because the person is too lazy to get started with the tests. Its all easy to write tests for a project which already has tests. Python has inbuilt unittest module which is inherently non-pythonic. Arrives pytest. This tool has all the things you need.
+Many a projects have very less or infact no tests just because the fact that maintainer is too lazy to write boilerplate for tests. Its all easy to write tests for a project which already has tests. Python has inbuilt unittest module which is inherently is java port. Arrives pytest. This tool has all the things you need to get started with.
 
 Lets says we need to test an api
 
@@ -18,6 +18,13 @@ Oh boy, you hit the server all the time when you run tests? Meh! Use vcrpy or re
 
 Here is the sample code
 
-<script src="https://gist.github.com/joeirimpan/8723b83da51bedbbaa1244bea293b25a.js"></script> 
+<script src="https://gist.github.com/joeirimpan/8723b83da51bedbbaa1244bea293b25a.js"></script>
+
+Awesome right? Now, one might think, ohh you can only replay the cassettes. It can also be used instances where we need to perform live requests to the server or to record new cassette ( http://vcrpy.readthedocs.io/en/latest/usage.html#record-modes ). The idea of naming things as a cassette is so intuitive and very clear.
+
+Okay, what if we have a secret key or authorisation header in the request which we do not want the public to see? vcrpy has even options for that, let it be modifying query params, post data, headers. You can even write your own callback before recording requests or recording responses. Interesting right?
+Check this out http://vcrpy.readthedocs.io/en/latest/advanced.html#filter-sensitive-data-from-the-request
 ---
 _slug: getting-started-with-pytest
+---
+twitter_handle: 

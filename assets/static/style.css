@@ -12,6 +12,11 @@ a:hover {
 }
 
 
+.container {
+  margin-bottom: 50px !important;
+}
+
+
 footer {
     position: fixed;
     bottom: 0;
